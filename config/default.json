@@ -4,10 +4,21 @@
     "loggerFormat": "tiny",
     "session": {
       "store": "@foal/typeorm"
+    },
+    "jwt": {
+      "secret": "Ak0WcVcGuOoFuZ4oqF1tgqbW6dIAeSacIN6h7qEyJM8=",
+      "secretEncoding": "base64"
+    },
+    "openapi": {
+      "useHooks": true
     }
   },
   "database": {
-    "type": "better-sqlite3",
-    "database": "./db.sqlite3"
+    "type": "postgres",
+    "database": "postgres",
+    "host": "localhost",
+    "username": "postgres",
+    "password": "postgres",
+    "port": 5433
   }
 }

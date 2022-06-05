@@ -9,9 +9,8 @@ module.exports = {
   username: Config.get('database.username', 'string'),
   password: Config.get('database.password', 'string'),
   database: Config.get('database.database', 'string'),
-
   dropSchema: Config.get('database.dropSchema', 'boolean', false),
-  synchronize: Config.get('database.synchronize', 'boolean', false),
+  synchronize: Config.get('database.synchronize', 'boolean', true),
 
   entities: ["build/app/**/*.entity.js"],
   migrations: ["build/migrations/*.js"],
