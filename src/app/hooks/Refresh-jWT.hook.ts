@@ -4,6 +4,8 @@ import { sign } from 'jsonwebtoken';
 
 export function RefreshJWT(): HookDecorator {
   return Hook(ctx => {
+    console.log(ctx.user);
+    
     if (!ctx.user) {
       return;
     }
@@ -18,8 +20,8 @@ export function RefreshJWT(): HookDecorator {
         // the decoded payload (default behavior).
         {
           email: ctx.user.email,
-          // id: ctx.user.id,
-          // sub: ctx.user.subject,
+          id: ctx.user.id,
+          sub: ctx.user.id.toString(),
         },
         getSecretOrPrivateKey(),
         { expiresIn: '15m' }

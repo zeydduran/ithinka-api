@@ -73,6 +73,7 @@ export class AuthController {
   }
   private async createJWT(user: User): Promise<string> {
     const payload = {
+      sub: user.id.toString(),
       email: user.email,
       id: user.id,
     };
@@ -80,7 +81,7 @@ export class AuthController {
     return promisify(sign as any)(
       payload,
       getSecretOrPrivateKey(),
-      { subject: user.id.toString() }
+      { expiresIn: '1m' }
     );
   }
 }
