@@ -1,5 +1,8 @@
 # ithinka-api
-Veritabanı ayarları config/default.json gerçekleştirilir.
+Veritabanı ayarları config/default.json dosyasından gerçekleştirilir.
+
+`npm install`
+
 
 `npm run develop`
 
